@@ -15,7 +15,7 @@ jobs:
   - name: Print Hello Message
     run: echo "Hello World from testing job"
   
-deploy:
+ deploy:
   runs-on: ubuntu-latest
   steps:
   - name: Print Hello Message
