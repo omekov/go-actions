@@ -1,5 +1,5 @@
 name: Go
-
+# Чтобы сработали job в каких событиях?
 on:
   push:
     branches: [ master ]
@@ -7,16 +7,19 @@ on:
     branches: [ master ]
 
 jobs:
-
+ # Первый job 
  testing:
+  # Docker image где будет стартовать событие
   runs-on: ubuntu-latest
-
+  # Какие шаги должен сделать наш контейнер
   steps:
   - name: Print Hello Message
     run: echo "Hello World from testing job"
-  
+ # Второй job  
  deploy:
   runs-on: ubuntu-latest
+  # ожидать контейнер testing
+  needs: [testing]
   steps:
   - name: Print Hello Message
     run: echo "Hello World from deploy job"
