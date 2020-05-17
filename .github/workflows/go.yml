@@ -1,4 +1,8 @@
 name: Go
+# переменная среда
+env:
+  APPLICATION_NAME: "Go"
+  PACKAGE_NAME: "Main-${{ github.sha }}"
 # Чтобы сработали job в каких событиях?
 on:
   push:
@@ -15,6 +19,9 @@ jobs:
   steps:
   - name: Print Hello Message
     run: echo "Hello World from testing job"
+  - name: Show env
+    run: |
+    echo "application: ${{ env.APPLICATION_NAME }}
  # Второй job  
  deploy:
   runs-on: ubuntu-latest
@@ -23,3 +30,6 @@ jobs:
   steps:
   - name: Print Hello Message
     run: echo "Hello World from deploy job"
+  - name: Show env
+    run: |
+    echo "package application: ${{ env.PACKAGE_NAME }}
