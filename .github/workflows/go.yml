@@ -38,3 +38,5 @@ jobs:
     run: echo "Hello World from deploy job"
   - name: Show env
     run: echo "package application ${{ env.PACKAGE_NAME }}"
+  - name: Lets test command
+    run: aws --version
