@@ -39,8 +39,9 @@ jobs:
   - name: Print Hello Message
     run: echo "Hello World from deploy job"
   - name: JOB ENV and Step ENV
-    run: echo job " ${{ env.JOB_ENV }} "
-    run: echo step " ${{ env.LOCAL_ENV }} "
+    run: |
+     echo job " ${{ env.JOB_ENV }} "
+     echo step " $LOCAL_ENV"
     env:
      LOCAL_ENV: "testing step env"
   - name: Show env
