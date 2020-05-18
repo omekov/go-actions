@@ -20,8 +20,7 @@ jobs:
   - name: Print Hello Message
     run: echo "Hello World from testing job"
   - name: Show env
-    run: |
-    echo "application: ${{ env.APPLICATION_NAME }}"
+    run: echo "application ${{ env.APPLICATION_NAME }}"
  # Второй job  
  deploy:
   runs-on: ubuntu-latest
@@ -31,5 +30,4 @@ jobs:
   - name: Print Hello Message
     run: echo "Hello World from deploy job"
   - name: Show env
-    run: |
-    echo "package application: ${{ env.PACKAGE_NAME }}"
+    run: echo "package application ${{ env.PACKAGE_NAME }}"
