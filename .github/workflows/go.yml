@@ -21,7 +21,12 @@ jobs:
     run: echo "Hello World from testing job"
   - name: Show env
     run: echo "application ${{ env.APPLICATION_NAME }}"
-  - name: List current folder
+  - name: List current folder after
+    run: ls -la
+  - name: Git Clone repository
+    # клонировать в репозиторий 
+    uses: actions/checkout@v1
+  - name: List current folder before
     run: ls -la
  # Второй job  
  deploy:
